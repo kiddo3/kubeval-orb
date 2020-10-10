@@ -1,0 +1,17 @@
+description: >
+  Run kubeval command
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  output:
+    type: string
+    default: "json"
+    description: "The kubeval output format. Supported values: json,stdout or tap"
+  directories:
+    type: string
+    description: "A comma-separated list of directories to recursively search for YAML documents"
+steps:
+  - run:
+      name: Run kubeval
+      command: |
+       kubeval -o <<parameters.output>> -d <<parameters.directories>>
