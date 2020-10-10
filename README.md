@@ -39,3 +39,6 @@ Example: `[semver:major]`
 
 For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
 
+### Kubeval repository
+
+https://github.com/instrumenta/kubeval
