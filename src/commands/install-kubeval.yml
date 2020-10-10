@@ -12,7 +12,7 @@ steps:
   - run:
       name: Install kubeval
       command: |
-       wget https://github.com/instrumenta/kubeval/releases/<<parameters.kubectl-version>>/download/kubeval-linux-amd64.tar.gz
+       wget https://github.com/instrumenta/kubeval/releases/<<parameters.kuveval-version>>/download/kubeval-linux-amd64.tar.gz
        tar xf kubeval-linux-amd64.tar.gz
        [ -w /usr/local/bin ] && SUDO="" || SUDO=sudo
        $SUDO cp kubeval /usr/local/bin
