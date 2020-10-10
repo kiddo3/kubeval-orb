@@ -1,0 +1,18 @@
+description: >
+  Installs kubeval latest release
+  Requirements: curl, amd64 architecture
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  kuveval-version:
+    type: string
+    default: "latest"
+    description: "The kubeval version"
+steps:
+  - run:
+      name: Install kubeval
+      command: |
+       wget https://github.com/instrumenta/kubeval/releases/<<parameters.kuveval-version>>/download/kubeval-linux-amd64.tar.gz
+       tar xf kubeval-linux-amd64.tar.gz
+       [ -w /usr/local/bin ] && SUDO="" || SUDO=sudo
+       $SUDO cp kubeval /usr/local/bin
