@@ -20,7 +20,7 @@ parameters:
     description: "Flag to ignore missing schemas CRDs"
   skip-kinds:
     type: string
-    default: null
+    default: ""
     description: "Comma separated list of resources to skip CRDs"
 steps:
   - run:
