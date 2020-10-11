@@ -9,7 +9,6 @@ Tool to run kubeval in CircleCI.
 Additional READMEs are available in each directory.
 
 
-
 ## Resources
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/kiddo3/kubeval-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
