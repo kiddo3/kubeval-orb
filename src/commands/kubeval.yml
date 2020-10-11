@@ -10,8 +10,31 @@ parameters:
   directories:
     type: string
     description: "A comma-separated list of directories to recursively search for YAML documents"
+  strict:
+    type: boolean
+    default: false
+    description: "Flag to simmulate kubectl and throw an error when specify properties are not part of the schemas"
+  ignore-missing-schemas:
+    type: boolean
+    default: false
+    description: "Flag to ignore missing schemas CRDs"
+  skip-kinds:
+    type: string
+    default: null
+    description: "Comma separated list of resources to skip CRDs"
 steps:
   - run:
       name: Run kubeval
       command: |
-       kubeval -o <<parameters.output>> -d <<parameters.directories>>
+        options=""
+        if [ <<parameters.strict>> ] ; then
+          options="$options --strict"
+        fi
+        if [ <<parameters.ignore-missing-schemas>> ] ; then
+          options="$options --ignore-missing-schemas"
+        fi
+        if [ <<parameters.skip-kinds>> ] ; then
+          options="$options --skip-kinds <<parameters.skip-kinds>>"
+        fi
+        options="$options -o <<parameters.output>> -d <<parameters.directories>>"
+        kubeval $options
