@@ -35,6 +35,12 @@ jobs:
       - kubevalorb/install-kubeval
       - kubevalorb/kubeval:
           directories: src/tests/manifests
+          strict: true
+          skip-kinds: Prometheus
+      - kubevalorb/kubeval:
+          directories: src/tests/manifests
+          strict: true
+          ignore-missing-schemas: true
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.

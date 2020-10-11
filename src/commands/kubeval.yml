@@ -27,13 +27,13 @@ steps:
       name: Run kubeval
       command: |
         options=""
-        if [ <<parameters.strict>> ] ; then
+        if [ <<parameters.strict>> ]; then
           options="$options --strict"
         fi
-        if [ <<parameters.ignore-missing-schemas>> ] ; then
+        if [ <<parameters.ignore-missing-schemas>> ]; then
           options="$options --ignore-missing-schemas"
         fi
-        if [ <<parameters.skip-kinds>> ] ; then
+        if [ -n "<<parameters.skip-kinds>>" ]; then
           options="$options --skip-kinds <<parameters.skip-kinds>>"
         fi
         options="$options -o <<parameters.output>> -d <<parameters.directories>>"

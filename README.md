@@ -4,7 +4,7 @@
 
 
 
-A starter template for orb projects. Build, test, and publish orbs automatically on CircleCI with [Orb-Tools](https://circleci.com/orbs/registry/orb/circleci/orb-tools).
+Tool to run kubeval in CircleCI.
 
 Additional READMEs are available in each directory.
 
